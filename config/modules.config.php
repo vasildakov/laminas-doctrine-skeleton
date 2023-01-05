@@ -28,5 +28,6 @@ return [
     'Laminas\Diactoros',
     'DoctrineModule',
     'DoctrineORMModule',
+    'Laminas\ZendFrameworkBridge',
     'Application',
 ];

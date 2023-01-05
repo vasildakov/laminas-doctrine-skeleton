@@ -1,23 +1,41 @@
 # laminas-doctrine-skeleton
 
 
-## Doctrine
+## CLI
+
+Diagnostics
+
+```
+./vendor/bin/laminas app:diagnostics
+
+Starting diagnostics:
+  OK   Cpu Performance
+  OK   Php Version: Current PHP version is 8.2.0
+ FAIL  Extension Loaded: Extensions redis, memcached are not available.
+  OK   Security Advisory: There are currently no security advisories for packages specified in composer.lock
+  OK   Dir Writable: The path is a writable directory.
+  OK   Disk Free: Remaining space at ./data: 49.52 GiB
+ FAIL  Class Exists: Class Redis does not exist
+  OK   Apache is working.
+```
 
 Doctrine Module
 
-```
+```shell
 ./vendor/bin/doctrine-module 
-
 ```
 
 Doctrine Migrations
 
-```
+```shell
 ./vendor/bin/doctrine-migrations
 ```
 
 Doctrine Data Fixtures
 
+```shell
+./vendor/bin/laminas app:import-data-fixtures
+```
 
 
 

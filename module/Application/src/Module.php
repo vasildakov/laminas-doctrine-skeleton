@@ -32,6 +32,14 @@ class Module
         return [
             'factories' => [
                 'doctrine.sql_logger_collector.orm_default' => new \DoctrineORMModule\Service\SQLLoggerCollectorFactory('orm_default'),
+                \Doctrine\Common\DataFixtures\Executor\ORMExecutor::class => \Application\Factory\ORMExecutorFactory::class,
+                // Commands
+                \Application\Command\ImportDataFixtures::class =>\Application\Command\ImportDataFixturesFactory::class,
+                \Application\Command\DiagnosticsCommand::class =>\Application\Command\DiagnosticsCommandFactory::class,
+            ],
+            'invokables' => [
+                \Doctrine\Common\DataFixtures\Loader::class => \Doctrine\Common\DataFixtures\Loader::class,
+                \Doctrine\Common\DataFixtures\Purger\ORMPurger::class => \Doctrine\Common\DataFixtures\Purger\ORMPurger::class,
             ],
         ];
     }

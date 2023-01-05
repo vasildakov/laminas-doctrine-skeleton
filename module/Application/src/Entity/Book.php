@@ -31,11 +31,36 @@ class Book
     
 
     #[ORM\Column(name: 'posted_at', type: Types::DATETIME_IMMUTABLE)]
-    private DateTimeImmutable $postedAt;
+    private \DateTimeImmutable $postedAt;
 
+
+    public function __constuct() 
+    {
+        $this->postedAt = new \DateTimeImmutable('now');
+    }
 
     public function getId(): string
     {
         return $this->id;
+    }
+
+    public function setTitle(?string $title) 
+    {
+        $this->title = $title;
+    }
+
+    public function setYear(?int $year) 
+    {
+        $this->year = $year;
+    }
+
+    public function setPages(?int $pages) 
+    {
+        $this->pages = $pages;
+    }
+
+    public function setPostedAt(\DateTimeImmutable $postedAt): void
+    {
+        $this->postedAt = $postedAt;
     }
 }

@@ -12,6 +12,11 @@
  * file.
  */
 
-return [
-    // ...
+ return [
+    'laminas-cli' => [
+        'commands' => [
+            'app:import-data-fixtures' => Application\Command\ImportDataFixtures::class,
+            'app:diagnostics' => Application\Command\DiagnosticsCommand::class,
+        ],
+    ],
 ];
